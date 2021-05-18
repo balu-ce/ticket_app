@@ -1,3 +1,4 @@
+com/ticket_app/demo/scheduler/ExpiryScheduler.class
 com/ticket_app/demo/repository/helper/SearchCriteria.class
 com/ticket_app/demo/notification/EmailService.class
 com/ticket_app/demo/model/TicketsEntity.class
