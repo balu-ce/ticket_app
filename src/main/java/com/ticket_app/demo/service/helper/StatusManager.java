@@ -11,12 +11,12 @@ public class StatusManager{
         this.status = status;
     }
 
-    public void handleStatus(String agentName){
+    public void handleStatus(String agentName, String email){
         switch (status) {
             case "WAITING_ON_CUSTOMER":
                 EmailService em_svc = new EmailService();
                 CompletableFuture.supplyAsync(() -> {
-                    em_svc.baselineExample(agentName);
+                    em_svc.baselineExample(agentName,email);
                     return null; 
                 });
                 break;

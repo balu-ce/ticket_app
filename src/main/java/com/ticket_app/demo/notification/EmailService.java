@@ -10,10 +10,10 @@ public class EmailService {
 
   }
   // Minimum required to send an email
-  public static Mail buildHelloEmail(String customerName) {
+  public static Mail buildHelloEmail(String customerName,String email) {
     Email from = new Email("yogesh@sinecycle.com");
     String subject = "Agent Ticket Response";
-    Email to = new Email("balu8095@gmail.com");
+    Email to = new Email(email);
     String content_text = "An agent" + customerName + "has been waiting for your response";
     Content content = new Content("text/plain", content_text);
     Mail mail = new Mail(from, subject, to, content);
@@ -21,8 +21,8 @@ public class EmailService {
     return mail;
   }
 
-  public void baselineExample(String customerName) {
-    final Mail helloWorld = buildHelloEmail(customerName);
+  public void baselineExample(String customerName, String email) {
+    final Mail helloWorld = buildHelloEmail(customerName,email);
     try {
       send(helloWorld);
     } catch (IOException e) {

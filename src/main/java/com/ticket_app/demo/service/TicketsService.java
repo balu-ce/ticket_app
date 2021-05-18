@@ -129,7 +129,7 @@ public class TicketsService {
         }
 
         StatusManager status_obj = new StatusManager(status);
-        status_obj.handleStatus(entity.getAssigned_agent().getName());
+        status_obj.handleStatus(entity.getAssigned_agent().getName(),entity.getCustomer().getEmail());
         return ticket_repository.save(entity);
       
     }
